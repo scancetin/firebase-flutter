@@ -9,7 +9,7 @@ class FirebaseService {
   static const String API_KEY = "AIzaSyBq9_tShr5iV7J9Acb_6haTCwvgOx5ex3Q";
   static const String FIREBASE_AUTH_URL = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBq9_tShr5iV7J9Acb_6haTCwvgOx5ex3Q";
 
-  Future<bool> signIn(UserRequest request) async {
+  Future<bool> emailSignIn(UserRequest request) async {
     var jsonModel = json.encode(request.toJson());
     final response = await http.post(Uri.parse(FIREBASE_AUTH_URL), body: jsonModel);
     // print(response.body);
